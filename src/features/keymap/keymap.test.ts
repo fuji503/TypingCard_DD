@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import defaultKeymapJson from '../../data/keymaps/trackeyboard-bm-v35.json'
+import defaultKeymapJson from '../../data/keymaps/typingcard-bm-v35.json'
 import type { Direction, GestureEvent, GestureKind } from '../gesture/types'
 import { activeLayers, behaviorLabel, parseBinding, parseKeymap, resolveBinding } from './binding'
 import { INITIAL_ENGINE_STATE, cancelOsSelect, handleGesture, type EngineState } from './engine'
@@ -81,6 +81,7 @@ describe('既定キーマップ (v3.5)', () => {
 
   it('不正なキーマップはエラー', () => {
     expect(() => parseKeymap({ ...keymap, format: 'x' })).toThrow(/format/)
+    expect(parseKeymap({ ...keymap, format: 'trackeyboard-keymap' }).format).toBe('typingcard-keymap')
     const broken = structuredClone(keymap)
     broken.layers[0].bindings[0] = { center: '&kp NOPE' }
     expect(() => parseKeymap(broken)).toThrow(/NOPE/)

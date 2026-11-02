@@ -1,4 +1,4 @@
-/** 実機 (TrackeyBoard BM) のキーピッチ */
+/** 実機 (TypingCard BM) のキーピッチ */
 export const BM_KEY_PITCH_MM = 17
 
 /** CSS 仕様上の 1mm (96dpi 換算)。実際の端末では誤差があるため実測で補正する */

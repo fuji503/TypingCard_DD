@@ -8,6 +8,16 @@ interface Release {
 // 新しい版を先頭に追加する
 const RELEASES: Release[] = [
   {
+    version: '1.2',
+    date: '2026-11-02',
+    title: 'プロジェクト名を TypingCard に変更',
+    changes: [
+      'プロジェクト名を TrackeyBoard から TypingCard に変更（画面のタイトル、使い方、既定のキーマップ名「TypingCard BM 配列 v3.5」）',
+      'キーマップ JSON の形式名を "typingcard-keymap" に変更。旧形式名 "trackeyboard-keymap" の JSON もインポート可能',
+      '公開 URL を https://fuji503.github.io/TypingCard_DD/ に変更',
+    ],
+  },
+  {
     version: '1.1',
     date: '2026-10-17',
     title: '表記の統一と改版履歴',

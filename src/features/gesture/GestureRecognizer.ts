@@ -19,7 +19,7 @@ export interface GestureRecognizerOptions {
  * 1本の指（ポインタ）に対するジェスチャー認識器。
  * DOM に依存しないので、座標を与えればテストできる。
  *
- * 仕様（TrackeyBoard BM 要件定義 3.1）:
+ * 仕様（TypingCard BM 要件定義 3.1）:
  * - タップ: 動かさずに離す → center の tap
  * - フリック: しきい値以上スライドして離す → その方向の tap（離した時点の方向で確定）
  * - ホールド: 指が停止してから holdDelay 経過で holdStart、以降 holdRepeat。フリック先でも可

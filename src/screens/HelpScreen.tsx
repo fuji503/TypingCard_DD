@@ -28,7 +28,7 @@ export default function HelpScreen({ onNavigate }: { onNavigate?: (id: ScreenId)
       <header className="flex flex-col gap-2">
         <h2 className="text-xl font-bold text-slate-900">使い方</h2>
         <p>
-          TrackeyBoard デジタルデモンストレータ（DD）の操作方法をまとめたページです。まずは
+          TypingCard デジタルデモンストレータ（DD）の操作方法をまとめたページです。まずは
           <ScreenLink id="simulator" onNavigate={onNavigate}>
             メイン画面
           </ScreenLink>
@@ -50,7 +50,7 @@ export default function HelpScreen({ onNavigate }: { onNavigate?: (id: ScreenId)
 
       <Section id="about">
         <p>
-          <b>TrackeyBoard BM</b> は、メカニカルスイッチを持たない一枚の基板だけで作る、薄くて小さなモバイルキーボードです。
+          <b>TypingCard BM</b> は、メカニカルスイッチを持たない一枚の基板だけで作る、薄くて小さなモバイルキーボードです。
           キーを「押す」のではなく、基板の表面を<b>タップ・フリック</b>して入力し、同じ面をトラックパッドやトラックポイントとしても使えます。
         </p>
         <p>このデモンストレータは、その入力体験を実機ができる前にブラウザ上で再現・検証するためのものです。</p>

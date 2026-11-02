@@ -2,13 +2,13 @@ import type { Direction, GestureConfig } from '../features/gesture/types'
 import type { PointerConfig } from '../features/pointer/config'
 
 /**
- * TrackeyBoard キーマップ（JSON でエクスポート/インポートする形式）。
+ * TypingCard キーマップ（JSON でエクスポート/インポートする形式）。
  * ZMK の概念に合わせている:
  * - layout: 物理レイアウト（ZMK の physical layout）。単位は 1u = 1 キーピッチ
  * - layers: レイヤー。bindings は layout.keys と同じ順・同じ数
  * - バインディングは ZMK の記法の文字列（"&kp A", "&kp LS(N1)", "&trans" など）
  *
- * ZMK に無い TrackeyBoard 固有の概念として、1キーにジェスチャー方向ごとの
+ * ZMK に無い TypingCard 固有の概念として、1キーにジェスチャー方向ごとの
  * バインディング（center=タップ, up/down/left/right=フリック/グライド）を持つ。
  */
 export interface Keymap {
@@ -26,7 +26,9 @@ export interface KeymapSettings {
   pointer?: Partial<PointerConfig>
 }
 
-export const KEYMAP_FORMAT = 'trackeyboard-keymap'
+export const KEYMAP_FORMAT = 'typingcard-keymap'
+/** 旧プロジェクト名 (TrackeyBoard) 時代の形式名。インポート時のみ受け付ける */
+export const LEGACY_KEYMAP_FORMAT = 'trackeyboard-keymap'
 
 export interface PhysicalLayout {
   keys: PhysicalKey[]

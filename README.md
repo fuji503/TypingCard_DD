@@ -1,6 +1,6 @@
-# TrackeyBoard DD
+# TypingCard DD
 
-物理デバイス「TrackeyBoard」の入力体験（タップ / ホールド / フリック / グライド）とトラックポイント操作をブラウザ上で再現・検証するデジタルデモンストレータ。
+物理デバイス「TypingCard」の入力体験（タップ / ホールド / フリック / グライド）とトラックポイント操作をブラウザ上で再現・検証するデジタルデモンストレータ。
 
 ## 開発
 
@@ -30,7 +30,7 @@ src/
 ## キーマップ JSON
 
 ZMK の概念（物理レイアウト・レイヤー・`&kp` 等のバインディング）に合わせた形式です。
-型定義は [src/types/keymap.ts](src/types/keymap.ts)、例は [src/data/keymaps/trackeyboard-bm-v35.json](src/data/keymaps/trackeyboard-bm-v35.json)。
+型定義は [src/types/keymap.ts](src/types/keymap.ts)、例は [src/data/keymaps/typingcard-bm-v35.json](src/data/keymaps/typingcard-bm-v35.json)。
 
 - `layout.keys`: 各キーの位置と大きさ（単位: キーピッチ）
 - `layout.vtp`: バーチャルトラックポイントの中心座標（単位: キーピッチ。省略で VTP なし）
@@ -51,4 +51,4 @@ ZMK の概念（物理レイアウト・レイヤー・`&kp` 等のバインデ�
 
 初回のみ、リポジトリの **Settings → Pages → Build and deployment → Source** を **GitHub Actions** に設定してください。
 
-公開 URL: https://fuji503.github.io/TrackeyBoard_DD/
+公開 URL: https://fuji503.github.io/TypingCard_DD/

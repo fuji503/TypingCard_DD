@@ -1,14 +1,14 @@
 import type { Direction } from '../gesture/types'
-import { KEYMAP_FORMAT, OS_LABELS, type Keymap, type Layer, type OsId, type PointerMode } from '../../types/keymap'
+import { KEYMAP_FORMAT, LEGACY_KEYMAP_FORMAT, OS_LABELS, type Keymap, type Layer, type OsId, type PointerMode } from '../../types/keymap'
 import { keycodeLabel, lookupKeycode, type Keycode } from './keycodes'
 
 /**
  * 解析済みバインディング。対応するビヘイビア:
  * - &kp <keycode>        キー入力
  * - &none / &trans       何もしない / 下位レイヤーへ透過
- * - &os_sel              OS 切替待機モードへ（TrackeyBoard 固有）
+ * - &os_sel              OS 切替待機モードへ（TypingCard 固有）
  * - &os_set <WIN|MAC|ANDROID|IOS>  OS 切替（OS 切替待機レイヤー用）
- * - &tp_toggle           トラックパッドモード切替（TrackeyBoard 固有）
+ * - &tp_toggle           トラックパッドモード切替（TypingCard 固有）
  * - &mkp <LCLK|MCLK|RCLK> マウスボタン（ZMK のマウスキー。トラックパッド/トラックポイントのレイヤー用）
  */
 export type Behavior =
@@ -108,7 +108,7 @@ export function parseKeymap(data: unknown): Keymap {
   }
   if (typeof data !== 'object' || data === null) fail('オブジェクトではありません')
   const km = data as Keymap
-  if (km.format !== KEYMAP_FORMAT) fail(`format が "${KEYMAP_FORMAT}" ではありません`)
+  if (km.format !== KEYMAP_FORMAT && km.format !== LEGACY_KEYMAP_FORMAT) fail(`format が "${KEYMAP_FORMAT}" ではありません`)
   if (km.version !== 1) fail(`未対応の version です: ${km.version}`)
   if (typeof km.name !== 'string') fail('name がありません')
   const gesture = km.settings?.gesture
@@ -150,5 +150,6 @@ export function parseKeymap(data: unknown): Keymap {
       }
     })
   })
-  return km
+  // 旧名 (TrackeyBoard) の形式で保存されたものも読み込み、新しい形式名に揃える
+  return { ...km, format: KEYMAP_FORMAT }
 }

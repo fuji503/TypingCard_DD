@@ -1,7 +1,7 @@
 {
-  "format": "trackeyboard-keymap",
+  "format": "typingcard-keymap",
   "version": 1,
-  "name": "TrackeyBoard BM 配列 v3.5",
+  "name": "TypingCard BM 配列 v3.5",
   "layout": {
     "keys": [
       {"x": 0, "y": 0, "w": 1, "h": 1},

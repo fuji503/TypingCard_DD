@@ -17,7 +17,7 @@ describe('serializeKeymap', () => {
 
 describe('keymapFileName', () => {
   it('キーマップ名をファイル名にし、使えない文字は置き換える', () => {
-    expect(keymapFileName('TrackeyBoard BM 配列 v3.5')).toBe('TrackeyBoard BM 配列 v3.5.json')
+    expect(keymapFileName('TypingCard BM 配列 v3.5')).toBe('TypingCard BM 配列 v3.5.json')
     expect(keymapFileName('a/b:c?')).toBe('a_b_c_.json')
     expect(keymapFileName('my.json')).toBe('my.json')
     expect(keymapFileName('  ')).toBe('keymap.json')
